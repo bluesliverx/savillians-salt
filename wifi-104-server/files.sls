@@ -5,7 +5,7 @@ include:
 {{ sls }}.uwsgi-config:
   file.managed:
     - name: /etc/uwsgi.d/wifi-104-server.ini 
-    - source: salt://{{ slspath }}/files/uwsgi.conf
+    - source: salt://{{ slspath }}/_files/uwsgi.conf
     - user: uwsgi
     - group: uwsgi
     - mode: 644

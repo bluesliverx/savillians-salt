@@ -3,4 +3,5 @@
   pkg.installed:
     - pkgs:
       - nginx
+      - uwsgi
 
