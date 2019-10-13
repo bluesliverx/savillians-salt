@@ -23,6 +23,14 @@ include:
     - require:
       - sls: {{ slsdotpath }}.packages
 
+{{ sls }}.nginx-config:
+  file.managed:
+    - name: /usr/local/etc/nginx/nginx.conf
+    - source: salt://{{ slspath }}/_files/nginx.conf
+    - mode: 644
+    - require:
+      - sls: {{ slsdotpath }}.packages
+
 {{ sls }}.app-src:
   git.latest:
     - name: https://github.com/bluesliverx/smartthings-src.git
