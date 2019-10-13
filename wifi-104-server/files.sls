@@ -16,7 +16,7 @@ include:
 {{ sls }}.uwsgi-config:
   file.managed:
     - name: /etc/uwsgi.ini 
-    - source: salt://{{ slspath }}/_files/uwsgi.conf
+    - source: salt://{{ slspath }}/_files/uwsgi.ini
     - user: uwsgi
     - group: uwsgi
     - mode: 644
