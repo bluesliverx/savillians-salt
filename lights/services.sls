@@ -1,7 +1,7 @@
 
 include:
 - .packages
-- .services
+- .files
 
 {{ sls }}.service:
   service.running:
@@ -9,4 +9,4 @@ include:
     - enable: true
     - watch:
       - sls: {{ slsdotpath }}.packages
-      - sls: {{ slsdotpath }}.services
+      - sls: {{ slsdotpath }}.files
