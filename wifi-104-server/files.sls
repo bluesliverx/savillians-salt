@@ -31,6 +31,9 @@ include:
 {{ sls }}.app-link:
   file.symlink:
     - name: /home/uwsgi/wifi-104-server
+    - user: uwsgi
+    - group: uwsgi
+    - makedirs: true
     - target: /root/smartthings-src/apps/wifi-104-server
     - require:
       - git: {{ sls }}.app-src
