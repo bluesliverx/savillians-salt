@@ -53,3 +53,9 @@ include:
     - require:
       - file: {{ sls }}.app-link
 
+{{ sls }}.run-dir:
+  file.directory:
+    - name: /var/run/uwsgi
+    - user: uwsgi
+    - group: uwsgi
+
