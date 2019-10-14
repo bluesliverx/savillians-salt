@@ -2,6 +2,15 @@
 include:
 - .packages
 
+{{ sls }}.add-nginx-to-uwsgi:
+  user.present:
+    - name: www
+    - groups:
+      - uwsgi
+    - remove_groups: false
+    - require:
+      - sls: {{ slsdotpath }}.packages
+
 {{ sls }}.wifi-config:
   file.managed:
     - name: /usr/local/etc/uwsgi/ini.d/wifi-104-server.ini
