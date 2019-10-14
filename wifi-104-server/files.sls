@@ -59,3 +59,9 @@ include:
     - user: uwsgi
     - group: uwsgi
 
+{{ sls }}.log-dir:
+  file.directory:
+    - name: /var/log/uwsgi
+    - user: uwsgi
+    - group: uwsgi
+
