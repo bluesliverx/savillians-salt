@@ -46,3 +46,9 @@ include:
     - require:
       - git: {{ sls }}.app-src
 
+{{ sls }}.install-reqs:
+  pip.installed:
+    - requirements: /root/smartthings-src/apps/wifi-104-server/requirements.txt
+    - require:
+      - file: {{ sls }}.app-link
+
