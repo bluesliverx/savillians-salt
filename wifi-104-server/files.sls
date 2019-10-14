@@ -4,7 +4,7 @@ include:
 
 {{ sls }}.wifi-config:
   file.managed:
-    - name: /etc/uwsgi.d/wifi-104-server.ini
+    - name: /usr/local/etc/uwsgi/ini.d/wifi-104-server.ini
     - source: salt://{{ slspath }}/_files/wifi-104-server.ini
     - user: uwsgi
     - group: uwsgi
@@ -15,10 +15,11 @@ include:
 
 {{ sls }}.uwsgi-config:
   file.managed:
-    - name: /etc/uwsgi.ini 
+    - name: /usr/local/etc/uwsgi/uwsgi.ini
     - source: salt://{{ slspath }}/_files/uwsgi.ini
     - user: uwsgi
     - group: uwsgi
+    - makedirs: true
     - mode: 644
     - require:
       - sls: {{ slsdotpath }}.packages
